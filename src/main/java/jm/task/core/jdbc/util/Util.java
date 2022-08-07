@@ -1,6 +1,30 @@
 package jm.task.core.jdbc.util;
 
-public class Util {
+import com.mysql.cj.jdbc.Driver;
 
-    // реализуйте настройку соеденения с БД
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Util {
+    // static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String url = "jdbc:mysql://localhost:3306/pp_schema";
+    private static final String username = "admin";
+    private static final String password = "admin";
+
+    public static Connection getConnection(){
+        Connection connection = null;
+        try {
+            Driver driver = new Driver();
+            DriverManager.registerDriver(driver);
+            connection = DriverManager.getConnection(url, username, password);
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            System.out.print("Connection ERROR");
+        }
+        return connection;
+    }
+
+
 }

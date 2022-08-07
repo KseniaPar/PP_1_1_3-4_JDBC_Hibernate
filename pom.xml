@@ -21,7 +21,6 @@
     </build>
 
     <dependencies>
-<!--         Ваши зависимости-->
          <!-- https://mvnrepository.com/artifact/junit/junit -->
          <dependency>
              <groupId>junit</groupId>
@@ -30,11 +29,13 @@
              <scope>test</scope>
          </dependency>
 
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.28</version>
+            <version>8.0.29</version>
         </dependency>
+
 
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
@@ -45,7 +46,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.6.3.Final</version>
+            <version>6.1.1.Final</version>
         </dependency>
      </dependencies>
 
