@@ -8,7 +8,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Util {
-    // static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String url = "jdbc:mysql://localhost:3306/pp_schema";
     private static final String username = "admin";
     private static final String password = "admin";
@@ -25,6 +24,4 @@ public class Util {
         }
         return connection;
     }
-
-
 }
