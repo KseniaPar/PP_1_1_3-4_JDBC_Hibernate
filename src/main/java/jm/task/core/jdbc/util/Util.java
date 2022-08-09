@@ -12,16 +12,31 @@ public class Util {
     private static final String username = "admin";
     private static final String password = "admin";
 
-    public static Connection getConnection(){
-        Connection connection = null;
+    private static Connection connection = buildConnection();
+
+    public static Connection buildConnection() {
         try {
             Driver driver = new Driver();
             DriverManager.registerDriver(driver);
             connection = DriverManager.getConnection(url, username, password);
-            connection.setAutoCommit(false);
         } catch (SQLException e) {
             System.out.print("Connection ERROR");
         }
         return connection;
+    }
+    public static Connection getConnection() {
+        try {
+            if (connection.isClosed()) {
+                connection = buildConnection();
+            }
+        } catch (SQLException ignored) { }
+        return connection;
+    }
+    public static void closeConnection(){
+        try {
+            if (!connection.isClosed()) {
+                connection.close();
+            }
+        } catch (SQLException ignored) { }
     }
 }
