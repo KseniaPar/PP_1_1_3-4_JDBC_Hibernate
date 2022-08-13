@@ -46,8 +46,6 @@ public class Util {
                 System.out.println("Problem creating session factory");
 
             }
-
-
         }
         return sessionFactory;
     }
@@ -74,12 +72,5 @@ public class Util {
             }
         } catch (SQLException ignored) { }
         return connection;
-    }
-    public static void closeConnection(){
-        try {
-            if (!connection.isClosed()) {
-                connection.close();
-            }
-        } catch (SQLException ignored) { }
     }
 }
